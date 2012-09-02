@@ -16,7 +16,7 @@ Modify your `.repo/local_manifest.xml` as follows:
 <?xml version="1.0" encoding="UTF-8"?>
   <manifest>
     <project name="CyanogenMod/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" />
-    <project name="flappjaxxx/android_device_samsung_quincyatt" path="device/samsung/quincyatt" />
+    <project name="CyanogenMod/android_device_samsung_quincyatt" path="device/samsung/quincyatt" />
     <project name="CyanogenMod/android_device_samsung_quincy-common" path="device/samsung/quincy-common" />
     <project name="flappjaxxx/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" revision="jb-full" />
     <project name="flappjaxxx/android_vendor_samsung_quincyatt" path="vendor/samsung/quincyatt" />
