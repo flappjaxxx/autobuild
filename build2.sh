@@ -1,7 +1,7 @@
 START=$(date +%s)
 clear
 . build/envsetup.sh
-wget http://rootdev.org/aopsxxx/local_manifest.xml
+wget http://rootdev.org/aospxxx/local_manifest.xml
 mv local_manifest.xml .repo/local_manifest.xml
 vendor/cm/get-prebuilts
 brunch cm_quincyatt-eng

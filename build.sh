@@ -3,7 +3,7 @@ clear
 export USE_CCACHE=1
 export CCACHE_DIR=/$HOME/.ccache
 prebuilts/misc/linux-x86/ccache/ccache -M 40G
-wget http://rootdev.org/aopsxxx/local_manifest.xml
+wget http://rootdev.org/aospxxx/local_manifest.xml
 mv local_manifest.xml .repo/local_manifest.xml
 . build/envsetup.sh
 vendor/cm/get-prebuilts
