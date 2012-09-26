@@ -51,8 +51,8 @@ clear
 echo "Zipping Final Package"
 sleep 3
 cd WORKING_AOSPxXx
-zip -r AOSPxXx-v2.1B7.zip *
-mv -v AOSPxXx-v2.1B7.zip ../
+zip -r AOSPxXx-$(date -u +%Y%m%d).zip *
+mv -v AOSPxXx-*.zip ../
 cd ..
 rm -rfv autobuild/cm-AOSPxXx-*.zip
 sleep 1
