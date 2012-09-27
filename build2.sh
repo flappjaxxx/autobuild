@@ -58,13 +58,13 @@ echo "Zipping Final Package"
 sleep 3
 cd WORKING_AOSPxXx
 zip -r AOSPxXx-$(date -u +%Y%m%d).zip *
-mv -v AOSPxXx-*7.zip ../
+mv -v AOSPxXx-*.zip ../
 clear
 cd ..
 echo "Cleaning Up"
 sleep 3
-rm -rfv autobuild/cm-AOSPxXx-*.zip
-rm -rfv autobuild/WORKING_AOSPxXx
+rm -rf cm-AOSPxXx-*.zip
+rm -rf WORKING_AOSPxXx
 sleep 1
 END=$(date +%s)
 ELAPSED=$((END - START))
@@ -74,4 +74,4 @@ printf "Elapsed: "
 [ $E_MIN != 0 ] && printf "%d min(s) " $E_MIN
 printf "%d sec(s)\n" $E_SEC
 echo "Finished."
-echo "Final Package now in autobuild directory"
+echo "Final Package Location autobuild/AOSPxXx-$(date -u +%Y%m%d).zip"
