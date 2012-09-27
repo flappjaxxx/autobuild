@@ -59,8 +59,12 @@ sleep 3
 cd WORKING_AOSPxXx
 zip -r AOSPxXx-$(date -u +%Y%m%d).zip *
 mv -v AOSPxXx-*7.zip ../
+clear
 cd ..
+echo "Cleaning Up"
+sleep 3
 rm -rfv autobuild/cm-AOSPxXx-*.zip
+rm -rfv autobuild/WORKING_AOSPxXx
 sleep 1
 END=$(date +%s)
 ELAPSED=$((END - START))
