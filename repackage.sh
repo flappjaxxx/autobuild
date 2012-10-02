@@ -1,12 +1,12 @@
 START=$(date +%s)
 clear
-echo "Building The Final AOSPxXx Package"
+echo "Building The Final AOSPxXx-ICS Package"
 sleep 5
 clear
-rm -rf autobuild/cm-AOSPxXx-*.zip
+rm -rf autobuild/cm-AOSPxXx-ICS-*.zip
 echo "Copying unfinished ROM"
 sleep 3
-cp -v out/target/product/quincyatt/cm-AOSPxXx-*.zip autobuild
+cp -v out/target/product/quincyatt/cm-AOSPxXx-ICS-*.zip autobuild
 cd autobuild
 sleep 1
 clear
@@ -18,7 +18,7 @@ sleep 1
 clear
 echo "Inflating Archive"
 sleep 3
-unzip cm-AOSPxXx-*.zip -d WORKING_AOSPxXx
+unzip cm-AOSPxXx-ICS-*.zip -d WORKING_AOSPxXx
 sleep 1
 clear
 echo "Copying GApps"
@@ -51,8 +51,8 @@ clear
 echo "Zipping Final Package"
 sleep 3
 cd WORKING_AOSPxXx
-zip -r AOSPxXx-$(date -u +%Y%m%d).zip *
-mv -v AOSPxXx-*.zip ../
+zip -r AOSPxXx-ICS-$(date -u +%Y%m%d).zip *
+mv -v AOSPxXx-ICS-*.zip ../
 clear
 cd ..
 echo "Cleaning Up"
@@ -68,4 +68,4 @@ printf "Elapsed: "
 [ $E_MIN != 0 ] && printf "%d min(s) " $E_MIN
 printf "%d sec(s)\n" $E_SEC
 echo "Finished."
-echo "Final Package Location autobuild/AOSPxXx-$(date -u +%Y%m%d).zip"
+echo "Final Package Location autobuild/AOSPxXx-ICS-$(date -u +%Y%m%d).zip"
