@@ -45,6 +45,7 @@ clear
 echo "Removing Unneeded Apps"
 sleep 3
 rm -f WORKING_AOSPxXx/system/app/Provision.apk
+rm -f WORKING_AOSPxXx/system/app/Gallery2.apk
 rm -f WORKING_AOSPxXx/system/app/QuickSearchBox.apk
 sed -i 's/cm_quincyatt/aospxxx_quincyatt/g' WORKING_AOSPxXx/system/build.prop
 sleep 1
