@@ -5,6 +5,7 @@ mv ics_local_manifest.xml .repo/local_manifest.xml
 . build/envsetup.sh
 vendor/cm/get-prebuilts
 brunch cm_quincyatt-eng
+cp out/target/product/quincyatt/system/app/FJTools-Not.apk vendor/cm/prebuilt/common/apps/FJTools-Note.apk
 clear
 echo "Building The Final AOSPxXx-ICS Package"
 sleep 5
