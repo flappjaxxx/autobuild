@@ -1,10 +1,5 @@
 START=$(date +%s)
 clear
-wget http://rootdev.org/aospxxx/ics_local_manifest.xml
-mv ics_local_manifest.xml .repo/local_manifest.xml
-. build/envsetup.sh
-vendor/cm/get-prebuilts
-brunch cm_d2att-eng
 wget http://rootdev.org/aospxxx/s3_local_manifest.xml
 mv s3_local_manifest.xml .repo/local_manifest.xml
 . build/envsetup.sh
