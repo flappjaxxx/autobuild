@@ -4,16 +4,21 @@ wget http://rootdev.org/aospxxx/ics_local_manifest.xml
 mv ics_local_manifest.xml .repo/local_manifest.xml
 . build/envsetup.sh
 vendor/cm/get-prebuilts
-brunch cm_quincyatt-eng
-cp out/target/product/quincyatt/system/app/FJTools-Not.apk vendor/cm/prebuilt/common/apps/FJTools-Note.apk
+brunch cm_d2att-eng
+wget http://rootdev.org/aospxxx/s3_local_manifest.xml
+mv s3_local_manifest.xml .repo/local_manifest.xml
+. build/envsetup.sh
+vendor/cm/get-prebuilts
+brunch cm_d2att-eng
+cp out/target/product/d2att/system/app/FJTools-Not.apk vendor/cm/prebuilt/common/apps/FJTools-Note.apk
 clear
-echo "Building The Final AOSPxXx-ICS Package"
+echo "Building The Final AOSPxXx-d2att Package"
 sleep 5
 clear
-rm -rf autobuild/cm-AOSPxXx-ICS-*.zip
+rm -rf autobuild/cm-AOSPxXx-d2att-*.zip
 echo "Copying unfinished ROM"
 sleep 3
-cp -v out/target/product/quincyatt/cm-AOSPxXx-ICS-*.zip autobuild
+cp -v out/target/product/d2att/cm-AOSPxXx-d2att-*.zip autobuild
 cd autobuild
 sleep 1
 clear
@@ -25,7 +30,7 @@ sleep 1
 clear
 echo "Inflating Archive"
 sleep 3
-unzip cm-AOSPxXx-ICS-*.zip -d WORKING_AOSPxXx
+unzip cm-AOSPxXx-d2att-*.zip -d WORKING_AOSPxXx
 sleep 1
 clear
 echo "Copying GApps"
@@ -48,7 +53,7 @@ sleep 3
 rm -f WORKING_AOSPxXx/system/app/Provision.apk
 rm -f WORKING_AOSPxXx/system/app/Gallery2.apk
 rm -f WORKING_AOSPxXx/system/app/QuickSearchBox.apk
-sed -i 's/cm_quincyatt/aospxxx_quincyatt/g' WORKING_AOSPxXx/system/build.prop
+sed -i 's/cm_d2att/aospxxx_d2att/g' WORKING_AOSPxXx/system/build.prop
 sleep 1
 clear
 echo "Zipaligning"
@@ -59,8 +64,8 @@ clear
 echo "Zipping Final Package"
 sleep 3
 cd WORKING_AOSPxXx
-zip -r AOSPxXx-ICS-$(date -u +%Y%m%d).zip *
-mv -v AOSPxXx-ICS-*.zip ../
+zip -r AOSPxXx-d2att-$(date -u +%Y%m%d).zip *
+mv -v AOSPxXx-d2att-*.zip ../
 clear
 cd ..
 echo "Cleaning Up"
@@ -76,4 +81,4 @@ printf "Elapsed: "
 [ $E_MIN != 0 ] && printf "%d min(s) " $E_MIN
 printf "%d sec(s)\n" $E_SEC
 echo "Finished."
-echo "Final Package Location autobuild/AOSPxXx-ICS-$(date -u +%Y%m%d).zip"
+echo "Final Package Location autobuild/AOSPxXx-d2att-$(date -u +%Y%m%d).zip"
