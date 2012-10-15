@@ -10,10 +10,10 @@ clear
 echo "Building The Final AOSPxXx-d2att Package"
 sleep 5
 clear
-rm -rf autobuild/cm-AOSPxXx-d2att-*.zip
+rm -rf autobuild/cm-AOSPxXx-*.zip
 echo "Copying unfinished ROM"
 sleep 3
-cp -v out/target/product/d2att/cm-AOSPxXx-d2att-*.zip autobuild
+cp -v out/target/product/d2att/cm-AOSPxXx-*.zip autobuild
 cd autobuild
 sleep 1
 clear
@@ -25,7 +25,7 @@ sleep 1
 clear
 echo "Inflating Archive"
 sleep 3
-unzip cm-AOSPxXx-d2att-*.zip -d WORKING_AOSPxXx
+unzip cm-AOSPxXx-*.zip -d WORKING_AOSPxXx
 sleep 1
 clear
 echo "Copying GApps"
