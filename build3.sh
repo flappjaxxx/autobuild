@@ -17,4 +17,3 @@ printf "Elapsed: "
 [ $E_MIN != 0 ] && printf "%d min(s) " $E_MIN
 printf "%d sec(s)\n" $E_SEC
 echo "Finished."
-echo "Final Package Location autobuild/AOSPxXx-d2att-$(date -u +%Y%m%d).zip"
