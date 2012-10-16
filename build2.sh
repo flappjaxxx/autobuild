@@ -5,7 +5,7 @@ mv s3_local_manifest.xml .repo/local_manifest.xml
 . build/envsetup.sh
 vendor/cm/get-prebuilts
 brunch cm_d2att-eng
-cp out/target/product/d2att/system/app/FJTools-Not.apk vendor/cm/prebuilt/common/apps/FJTools-Note.apk
+cp out/target/product/d2att/system/app/FJTools-Note.apk vendor/cm/prebuilt/common/apps/FJTools-Note.apk
 clear
 echo "Building The Final AOSPxXx-d2att Package"
 sleep 5
@@ -46,8 +46,6 @@ clear
 echo "Removing Unneeded Apps"
 sleep 3
 rm -f WORKING_AOSPxXx/system/app/Provision.apk
-rm -f WORKING_AOSPxXx/system/app/Gallery2.apk
-rm -f WORKING_AOSPxXx/system/app/QuickSearchBox.apk
 sed -i 's/cm_d2att/aospxxx_d2att/g' WORKING_AOSPxXx/system/build.prop
 sleep 1
 clear
