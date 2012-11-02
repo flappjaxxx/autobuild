@@ -6,6 +6,7 @@ mv default.xml default.xml.bak
 wget https://raw.github.com/flappjaxxx/android/jellybean-nexus/default.xml
 cd ../../
 repo sync
+make clobber
 export USE_CCACHE=1
 export CCACHE_DIR=/$HOME/.ccache
 prebuilts/misc/linux-x86/ccache/ccache -M 40G

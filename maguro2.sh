@@ -6,6 +6,7 @@ mv default.xml default.xml.bak
 wget https://raw.github.com/flappjaxxx/android/jellybean-nexus/default.xml
 cd ../../
 repo sync
+make clobber
 . build/envsetup.sh
 vendor/cm/get-prebuilts
 brunch cm_maguro-eng
