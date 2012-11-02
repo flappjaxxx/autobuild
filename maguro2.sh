@@ -1,6 +1,10 @@
 START=$(date +%s)
 clear
-cp -f autobuild/default-maguro.xml .repo/manifests/default.xml
+echo "Fetching manifest..."
+cd .repo/manifests
+mv default.xml default.xml.bak
+wget https://raw.github.com/flappjaxxx/android/jellybean-nexus/default.xml
+cd ../../
 repo sync
 . build/envsetup.sh
 vendor/cm/get-prebuilts
@@ -70,6 +74,7 @@ sleep 3
 rm -rf cm-AOSPxXx-*.zip
 rm -rf WORKING_AOSPxXx
 sleep 1
+cd ..
 END=$(date +%s)
 ELAPSED=$((END - START))
 E_MIN=$((ELAPSED / 60))
@@ -77,5 +82,8 @@ E_SEC=$((ELAPSED - E_MIN * 60))
 printf "Elapsed: "
 [ $E_MIN != 0 ] && printf "%d min(s) " $E_MIN
 printf "%d sec(s)\n" $E_SEC
+cd .repo/manifests
+rm -f default.xml
+mv default.xml.bak default.xml
 echo "Finished."
 echo "Final Package Location autobuild/AOSPxXx-maguro-$(date -u +%Y%m%d).zip"
