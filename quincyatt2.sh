@@ -6,8 +6,21 @@ mv local_manifest.xml .repo/local_manifest.xml
 vendor/cm/get-prebuilts
 brunch cm_quincyatt-eng
 clear
-echo "Building The Final AOSPxXx Package"
-sleep 5
+echo "Welcome to the FJ Autobuild Kitchen!"
+echo "Building The Final AOSPxXx Package in.."
+sleep 1
+echo "5....."
+sleep 1
+echo "4...."
+sleep 1
+echo "3..."
+sleep 1
+echo "2.."
+sleep 1
+echo "1."
+sleep 1
+echo "0"
+sleep 1
 clear
 rm -rf autobuild/cm-AOSPxXx-*.zip
 echo "Copying unfinished ROM"
@@ -27,20 +40,16 @@ sleep 3
 unzip cm-AOSPxXx-*.zip -d WORKING_AOSPxXx
 sleep 1
 clear
-echo "Copying GApps"
-sleep 3
-cp -Rv gapps/system WORKING_AOSPxXx
-sleep 1
-clear
 echo "Copying Installer"
 sleep 3
-cp -Rv META-INF WORKING_AOSPxXx
+cp -Rv META-INF-quincyatt WORKING_AOSPxXx/META-INF
 sleep 1
 clear
 echo "Copying User Apps"
 sleep 3
-cp -Rv data WORKING_AOSPxXx
+cp -Rv data-quincyatt WORKING_AOSPxXx/data
 sleep 1
+clear
 sed -i 's/cm_quincyatt/aospxxx_quincyatt/g' WORKING_AOSPxXx/system/build.prop
 sleep 1
 clear

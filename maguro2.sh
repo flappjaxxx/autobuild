@@ -1,13 +1,26 @@
 START=$(date +%s)
 clear
-wget http://rootdev.org/aospxxx/local_manifest.xml
-mv local_manifest.xml .repo/local_manifest.xml
+cp -f autobuild/default-maguro.xml .repo/manifests/default.xml
+repo sync
 . build/envsetup.sh
 vendor/cm/get-prebuilts
 brunch cm_maguro-eng
 clear
-echo "Building The Final AOSPxXx Package"
-sleep 5
+echo "Welcome to the FJ Autobuild Kitchen!"
+echo "Building The Final AOSPxXx Package in.."
+sleep 1
+echo "5....."
+sleep 1
+echo "4...."
+sleep 1
+echo "3..."
+sleep 1
+echo "2.."
+sleep 1
+echo "1."
+sleep 1
+echo "0"
+sleep 1
 clear
 rm -rf autobuild/cm-AOSPxXx-*.zip
 echo "Copying unfinished ROM"
@@ -29,12 +42,12 @@ sleep 1
 clear
 echo "Copying Installer"
 sleep 3
-cp -Rv META-INF WORKING_AOSPxXx
+cp -Rv META-INF-maguro WORKING_AOSPxXx/META-INF
 sleep 1
 clear
 echo "Copying User Apps"
 sleep 3
-cp -Rv data WORKING_AOSPxXx
+cp -Rv data-maguro WORKING_AOSPxXx/data
 sleep 1
 clear
 sed -i 's/cm_maguro/aospxxx_maguro/g' WORKING_AOSPxXx/system/build.prop
