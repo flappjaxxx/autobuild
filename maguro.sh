@@ -3,7 +3,7 @@ clear
 echo "Fetching manifest and projects..."
 cd .repo
 rm -rf manifests manifests.git project.list repo manifest.xml local_manifest.xml
-cd ../../
+cd ..
 repo init -u git://github.com/flappjaxxx/android.git -b jellybean-nexus
 repo sync
 make clobber
