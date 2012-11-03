@@ -50,7 +50,7 @@ sleep 1
 clear
 echo "Copying Installer"
 sleep 3
-cp -Rv META-INF-quincyatt WORKING_AOSPxXx/META-INF
+cp -fv quincyatt-updater-script WORKING_AOSPxXx/META-INF/com/google/android/updater-script
 sleep 1
 clear
 echo "Copying User Apps"
