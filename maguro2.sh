@@ -1,10 +1,10 @@
 START=$(date +%s)
 clear
-echo "Fetching manifest..."
-cd .repo/manifests
-mv default.xml default.xml.bak
-wget https://raw.github.com/flappjaxxx/android/jellybean-nexus/default.xml
+echo "Fetching manifest and projects..."
+cd .repo
+rm -rf manifests manifests.git project.list repo manifest.xml local_manifest.xml
 cd ../../
+repo init -u git://github.com/flappjaxxx/android.git -b jellybean-nexus
 repo sync
 make clobber
 . build/envsetup.sh
