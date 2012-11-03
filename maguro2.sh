@@ -83,8 +83,5 @@ E_SEC=$((ELAPSED - E_MIN * 60))
 printf "Elapsed: "
 [ $E_MIN != 0 ] && printf "%d min(s) " $E_MIN
 printf "%d sec(s)\n" $E_SEC
-cd .repo/manifests
-rm -f default.xml
-mv default.xml.bak default.xml
 echo "Finished."
 echo "Final Package Location autobuild/AOSPxXx-maguro-$(date -u +%Y%m%d).zip"
