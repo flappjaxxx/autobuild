@@ -2,7 +2,7 @@ START=$(date +%s)
 clear
 echo "Fetching manifest and projects..."
 cd .repo
-rm -rf manifests manifests.git project.list repo manifest.xml local_manifest.xml .git
+rm -rf manifests manifests.git project.list repo manifest.xml
 cd ..
 repo init -u git://github.com/flappjaxxx/android.git -b jellybean
 repo sync
