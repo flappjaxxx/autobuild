@@ -61,7 +61,7 @@ cp -fv 42cam/GalleryGoogle.apk WORKING_AOSPxXx/system/app/GalleryGoogle.apk
 cp -fv 42cam/GmsCore.apk WORKING_AOSPxXx/system/app/GmsCore.apk
 cp -fv 42cam/libjni_filtershow_filters.so WORKING_AOSPxXx/system/lib/libjni_filtershow_filters.so
 cp -fv 42cam/libjni_mosaic.so WORKING_AOSPxXx/system/lib/libjni_mosaic.so
-cp -fv 42cam/liblightcycle.so WORKING_AOSPxXx/system/app/liblightcycle.so
+cp -fv 42cam/liblightcycle.so WORKING_AOSPxXx/system/lib/liblightcycle.so
 sed -i 's/cm_maguro/aospxxx_maguro/g' WORKING_AOSPxXx/system/build.prop
 sleep 1
 clear
