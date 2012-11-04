@@ -19,11 +19,6 @@ clear
 echo "Inflating Archive"
 sleep 3
 unzip cm-AOSPxXx-*.zip -d WORKING_AOSPxXx
-sleep 1
-clear
-echo "Copying User Apps"
-sleep 3
-cp -Rv data WORKING_AOSPxXx
 sed -i 's/cm_d2att/aospxxx_d2att/g' WORKING_AOSPxXx/system/build.prop
 sleep 1
 clear
