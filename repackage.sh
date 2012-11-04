@@ -21,24 +21,9 @@ sleep 3
 unzip cm-AOSPxXx-*.zip -d WORKING_AOSPxXx
 sleep 1
 clear
-echo "Copying GApps"
-sleep 3
-cp -Rv gapps/system WORKING_AOSPxXx
-sleep 1
-clear
-echo "Copying Installer"
-sleep 3
-cp -Rv META-INF WORKING_AOSPxXx
-sleep 1
-clear
 echo "Copying User Apps"
 sleep 3
 cp -Rv data WORKING_AOSPxXx
-sleep 1
-clear
-echo "Removing Unneeded Apps"
-sleep 3
-rm -f WORKING_AOSPxXx/system/app/Provision.apk
 sed -i 's/cm_d2att/aospxxx_d2att/g' WORKING_AOSPxXx/system/build.prop
 sleep 1
 clear
