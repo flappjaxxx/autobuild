@@ -1,19 +1,9 @@
-assert(getprop("ro.product.device") == "maguro" || getprop("ro.build.product") == "maguro");
-ui_print("");
-ui_print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
-ui_print("*                                     *");
-ui_print("*               AOSPxXx               *");
-ui_print("*        Galaxy Nexus Edition         *");
-ui_print("*            -aka maguro-             *");
-ui_print("*                                     *");
-ui_print("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
-ui_print("");
+assert(!less_than_int(1354761367, getprop("ro.build.date.utc")));
+assert(getprop("ro.product.device") == "maguro" ||
+       getprop("ro.build.product") == "maguro");
 show_progress(0.500000, 0);
 format("ext4", "EMMC", "/dev/block/platform/omap/omap_hsmmc.0/by-name/system", "0", "/system");
 mount("ext4", "EMMC", "/dev/block/platform/omap/omap_hsmmc.0/by-name/system", "/system");
-mount("ext4", "EMMC", "/dev/block/platform/omap/omap_hsmmc.0/by-name/userdata", "/data");
-package_extract_dir("data", "/data");
-set_perm_recursive(1000, 1000, 0771, 0644, "/data/app");
 package_extract_dir("system", "/system");
 symlink("/factory/hdcp.keys", "/system/vendor/firmware/hdcp.keys");
 symlink("Roboto-Bold.ttf", "/system/fonts/DroidSans-Bold.ttf");
@@ -92,9 +82,10 @@ symlink("busybox", "/system/xbin/[", "/system/xbin/[[",
         "/system/xbin/zcat");
 symlink("mksh", "/system/bin/sh");
 symlink("toolbox", "/system/bin/cat", "/system/bin/chmod",
-        "/system/bin/chown", "/system/bin/cmp", "/system/bin/date",
-        "/system/bin/dd", "/system/bin/df", "/system/bin/dmesg",
-        "/system/bin/getevent", "/system/bin/getprop", "/system/bin/hd",
+        "/system/bin/chown", "/system/bin/cmp", "/system/bin/cp",
+        "/system/bin/date", "/system/bin/dd", "/system/bin/df",
+        "/system/bin/dmesg", "/system/bin/du", "/system/bin/getevent",
+        "/system/bin/getprop", "/system/bin/grep", "/system/bin/hd",
         "/system/bin/id", "/system/bin/ifconfig", "/system/bin/iftop",
         "/system/bin/insmod", "/system/bin/ioctl", "/system/bin/ionice",
         "/system/bin/kill", "/system/bin/ln", "/system/bin/log",
@@ -112,19 +103,13 @@ symlink("toolbox", "/system/bin/cat", "/system/bin/chmod",
         "/system/bin/uptime", "/system/bin/vmstat", "/system/bin/watchprops",
         "/system/bin/wipe");
 set_perm_recursive(0, 0, 0755, 0644, "/system");
-set_perm_recursive(0, 0, 0755, 0755, "/system/addon.d");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/bin");
 set_perm(0, 3003, 02750, "/system/bin/netcfg");
 set_perm(0, 3004, 02755, "/system/bin/ping");
 set_perm(0, 2000, 06750, "/system/bin/run-as");
-set_perm_recursive(1002, 1002, 0755, 0440, "/system/etc/bluetooth");
-set_perm(0, 0, 0755, "/system/etc/bluetooth");
-set_perm(1000, 1000, 0640, "/system/etc/bluetooth/auto_pairing.conf");
-set_perm(3002, 3002, 0444, "/system/etc/bluetooth/blacklist.conf");
 set_perm(1002, 1002, 0440, "/system/etc/dbus.conf");
 set_perm(1014, 2000, 0550, "/system/etc/dhcpcd/dhcpcd-run-hooks");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d");
-set_perm(0, 0, 0755, "/system/etc/init.d");
 set_perm(0, 2000, 0550, "/system/etc/init.goldfish.sh");
 set_perm_recursive(0, 0, 0755, 0555, "/system/etc/ppp");
 set_perm(0, 2000, 0755, "/system/vendor");
@@ -141,16 +126,10 @@ set_perm(0, 0, 06755, "/system/xbin/librank");
 set_perm(0, 0, 06755, "/system/xbin/procmem");
 set_perm(0, 0, 06755, "/system/xbin/procrank");
 set_perm(0, 0, 06755, "/system/xbin/su");
-set_perm(0, 0, 06755, "/system/xbin/tcpdump");
 show_progress(0.200000, 0);
-show_progress(0.200000, 10);
-package_extract_file("system/bin/modelid_cfg.sh", "/tmp/modelid_cfg.sh");
-set_perm(0, 0, 0777, "/tmp/modelid_cfg.sh");
-run_program("/tmp/modelid_cfg.sh", "");
 show_progress(0.200000, 10);
 package_extract_file("boot.img", "/dev/block/platform/omap/omap_hsmmc.0/by-name/boot");
 show_progress(0.100000, 0);
-ui_print("Fixing fs_size in crypto footer...");
+delete("/system/etc/init.d/placeholder");
 assert(samsung.fs_size_fix());
 unmount("/system");
-unmount("/data");
