@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="flappjaxxx/android_device_samsung_msm8660-common" path="device/samsung/msm8660-common" remote="github" revision="cm-10.1" />
+  <project name="flappjaxxx/android_device_samsung_quincy-common" path="device/samsung/quincy-common" remote="github" revision="cm-10.1" />
+  <project name="flappjaxxx/android_kernel_samsung_msm8660-common" path="kernel/samsung/msm8660-common" remote="github" revision="cm-10.1Alt" />
+  <project name="flappjaxxx/android_device_samsung_quincyatt" path="device/samsung/quincyatt" remote="github" revision="cm-10.1" />
+  <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="cm-10.1" />
+</manifest>
