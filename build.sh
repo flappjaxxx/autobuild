@@ -30,18 +30,18 @@ do
   if [ "$?" != "1" ]
   then
     case $opt in
-     1) sh autobuild/tools/quincyatt.sh; echo "Done.";;
-      2) sh autobuild/tools/quincyatt2.sh; echo "Done.";;     
-      3) sh autobuild/tools/h0tcakez.sh; echo "Done.";;
-      4) sh autobuild/tools/h0tcakezalt.sh; echo "Done.";;
-      5) sh autobuild/tools/h0tcakeztest.sh; echo "Done.";;
-      CU) sh autobuild/tools/cleanup.sh; echo "Done.";;
+     1) autobuild/tools/quincyatt.sh; echo "Done.";;
+      2) autobuild/tools/quincyatt2.sh; echo "Done.";;     
+      3) autobuild/tools/h0tcakez.sh; echo "Done.";;
+      4) autobuild/tools/h0tcakezalt.sh; echo "Done.";;
+      5) autobuild/tools/h0tcakeztest.sh; echo "Done.";;
+      CU) autobuild/tools/cleanup.sh; echo "Done.";;
       x) clear; echo; echo "Goodbye."; echo; exit 1;;
       *) echo "Invalid option"; sleep 1; continue;;
     esac
   fi
 
-  tools/press_enter
+  autobuild/tools/press_enter
 
 done
 
