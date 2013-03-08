@@ -1,8 +1,0 @@
-AOSPxXx
-===========
-
-Getting Started
----------------
-
-This is part of a bigger package.
-If you just clone this repo it will not work
